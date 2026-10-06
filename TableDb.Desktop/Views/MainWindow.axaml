@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TableDb.Desktop.Views.MainWindow"
+        Title="TableDb" Width="1100" Height="680"
+        Closing="OnWindowClosing">
+    <DockPanel Margin="16">
+        <Menu DockPanel.Dock="Top" Margin="0,0,0,8">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Нова база…" Click="OnNewDatabase" />
+                <MenuItem Header="Відкрити…" Click="OnOpen" />
+                <MenuItem x:Name="MenuSave" Header="Зберегти" IsEnabled="False" Click="OnSave" />
+                <MenuItem x:Name="MenuSaveAs" Header="Зберегти як…" IsEnabled="False" Click="OnSaveAs" />
+                <Separator />
+                <MenuItem Header="Вихід" Click="OnExit" />
+            </MenuItem>
+            <MenuItem x:Name="MenuTable" Header="Таблиця" IsEnabled="False">
+                <MenuItem Header="Створити…" Click="OnCreateTable" />
+                <MenuItem Header="Знищити" Classes="destructive" Click="OnDropTable" />
+            </MenuItem>
+            <MenuItem x:Name="MenuRow" Header="Рядок" IsEnabled="False">
+                <MenuItem Header="Додати…" Click="OnAddRow" />
+                <MenuItem Header="Редагувати…" Click="OnEditRow" />
+                <MenuItem Header="Видалити" Classes="destructive" Click="OnDeleteRow" />
+            </MenuItem>
+            <MenuItem x:Name="MenuOperations" Header="Операції" IsEnabled="False">
+                <MenuItem Header="Прямий добуток…" Click="OnProduct" />
+            </MenuItem>
+        </Menu>
+
+        <TextBlock x:Name="StatusText" DockPanel.Dock="Bottom" Classes="muted" Margin="4,12,0,0" />
+
+        <Grid ColumnDefinitions="260,24,*">
+
+            <Border Grid.Column="0" Classes="sidebar">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="ТАБЛИЦІ" Classes="caption" Margin="0,0,0,12" />
+                    <ListBox x:Name="TablesList" SelectionChanged="OnTableSelected" />
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="2" Classes="card" Padding="0" ClipToBounds="True">
+
+                <DataGrid x:Name="RowsGrid" Margin="8"
+                          AutoGenerateColumns="False" IsReadOnly="True"
+                          CanUserSortColumns="False" CanUserReorderColumns="False"
+                          GridLinesVisibility="Horizontal" SelectionMode="Single"
+                          DoubleTapped="OnGridDoubleTapped" />
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

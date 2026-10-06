@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TableDb.Desktop.Views.RowWindow"
+        Width="520" Height="600" WindowStartupLocation="CenterOwner">
+    <Border Classes="card" Margin="16">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Bottom" Spacing="8" Margin="0,12,0,0">
+                <TextBlock x:Name="ErrorText" Classes="error" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                    <Button Classes="secondary" Content="Скасувати" MinWidth="90" Click="OnCancel" IsCancel="True" />
+                    <Button x:Name="OkButton" Classes="primary" Content="OK" MinWidth="90" Click="OnOk" IsDefault="True" />
+                </StackPanel>
+            </StackPanel>
+            <ScrollViewer>
+                <StackPanel x:Name="FieldsPanel" Spacing="12" Margin="0,0,12,0" />
+            </ScrollViewer>
+        </DockPanel>
+    </Border>
+</Window>

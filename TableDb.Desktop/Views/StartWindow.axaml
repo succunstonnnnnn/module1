@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TableDb.Desktop.Views.StartWindow"
+        Title="TableDb — режим роботи"
+        Width="480" SizeToContent="Height" WindowStartupLocation="CenterScreen" CanResize="False">
+    <Border Classes="card" Margin="16">
+        <StackPanel Spacing="8">
+            <TextBlock Text="Режим роботи" Classes="heading" Margin="0,0,0,8" />
+
+            <ListBox x:Name="ModeList" SelectedIndex="0" SelectionChanged="OnModeChanged">
+                <ListBoxItem>
+                    <StackPanel Margin="0,4">
+                        <TextBlock Text="Локальний файл" Classes="label" />
+                        <TextBlock Text="База зберігається у файлі на цьому комп'ютері" Classes="hint" />
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Margin="0,4">
+                        <TextBlock Text="Віддалений сервер" Classes="label" />
+                        <TextBlock Text="Робота з базою на сервері через REST API" Classes="hint" />
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+
+            <StackPanel x:Name="ServerPanel" Spacing="4" IsVisible="False" Margin="0,8,0,0">
+                <TextBlock Text="Адреса сервера" Classes="label" />
+                <TextBox x:Name="AddressBox" Text="http://localhost:5080" />
+                <Button x:Name="CheckButton" Content="Перевірити з'єднання" HorizontalAlignment="Left"
+                        Margin="0,8,0,0" Click="OnCheckConnection" />
+            </StackPanel>
+
+            <TextBlock x:Name="InfoText" TextWrapping="Wrap" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+                <Button x:Name="ContinueButton" Classes="primary" Content="Продовжити" MinWidth="110"
+                        Click="OnContinue" IsDefault="True" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

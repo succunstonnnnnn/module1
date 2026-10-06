@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TableDb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TableDb</h1>
+    <span id="dbName" class="badge outline"></span>
+    <div class="spacer"></div>
+    <button id="btnNewDb" class="secondary">Нова база</button>
+    <button id="btnLoad">Відкрити</button>
+    <button id="btnSave" class="primary">Зберегти</button>
+  </header>
+
+  <main>
+    <aside>
+      <h2>Таблиці</h2>
+      <ul id="tableList"></ul>
+      <button id="btnCreateTable" class="primary wide">+ Створити таблицю</button>
+      <button id="btnProduct" class="wide secondary">Прямий добуток…</button>
+    </aside>
+
+    <section id="content">
+      <div class="card"><p class="muted">Оберіть таблицю зліва або створіть нову.</p></div>
+    </section>
+  </main>
+
+  <footer id="status">Готово</footer>
+
+    <form method="dialog" id="dialogForm">
+      <h3 id="dialogTitle"></h3>
+      <div id="dialogBody"></div>
+      <p id="dialogError" class="error"></p>
+      <div class="dialog-buttons">
+        <button type="submit" id="dialogOk" class="primary">OK</button>
+        <button type="button" id="dialogCancel" class="secondary">Скасувати</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TableDb.Desktop.App"
+             RequestedThemeVariant="Light">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="CanvasColor">#f5f5f5</Color>
+            <Color x:Key="PaperColor">#ffffff</Color>
+            <Color x:Key="SidebarColor">#fafafa</Color>
+            <Color x:Key="InkColor">#0a0a0a</Color>
+            <Color x:Key="InkSoftColor">#171717</Color>
+            <Color x:Key="MidGrayColor">#737373</Color>
+            <Color x:Key="HairlineColor">#e5e5e5</Color>
+            <Color x:Key="EmberColor">#e7000b</Color>
+            <Color x:Key="TransparentColor">#00ffffff</Color>
+
+            <SolidColorBrush x:Key="CanvasBrush" Color="{StaticResource CanvasColor}" />
+            <SolidColorBrush x:Key="PaperBrush" Color="{StaticResource PaperColor}" />
+            <SolidColorBrush x:Key="SidebarBrush" Color="{StaticResource SidebarColor}" />
+            <SolidColorBrush x:Key="InkBrush" Color="{StaticResource InkColor}" />
+            <SolidColorBrush x:Key="InkSoftBrush" Color="{StaticResource InkSoftColor}" />
+            <SolidColorBrush x:Key="MidGrayBrush" Color="{StaticResource MidGrayColor}" />
+            <SolidColorBrush x:Key="HairlineBrush" Color="{StaticResource HairlineColor}" />
+            <SolidColorBrush x:Key="EmberBrush" Color="{StaticResource EmberColor}" />
+            <SolidColorBrush x:Key="ClearBrush" Color="{StaticResource TransparentColor}" />
+
+            <CornerRadius x:Key="RadiusButtons">18</CornerRadius>
+            <CornerRadius x:Key="RadiusCards">24</CornerRadius>
+
+            <FontFamily x:Key="FontSans">avares://TableDb.Desktop/Assets/Fonts#Geist, Inter, sans-serif</FontFamily>
+            <x:Double x:Key="TextCaption">12</x:Double>
+            <x:Double x:Key="TextBody">14</x:Double>
+            <x:Double x:Key="TextSubheading">18</x:Double>
+            <x:Double x:Key="TextHeadingSm">24</x:Double>
+            <x:Double x:Key="SizeControl">36</x:Double>
+
+            <BoxShadows x:Key="ShadowCard">0 0 0 1 #0D171717, 0 1 3 0 #1A000000, 0 1 2 -1 #1A000000</BoxShadows>
+
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+
+                    <StaticResource x:Key="TextControlBackground" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="TextControlBackgroundPointerOver" ResourceKey="CanvasBrush" />
+
+                    <StaticResource x:Key="TextControlBackgroundFocused" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="TextControlBorderBrush" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="TextControlBorderBrushPointerOver" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="TextControlBorderBrushFocused" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="TextControlForeground" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="TextControlForegroundPointerOver" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="TextControlForegroundFocused" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="TextControlPlaceholderForeground" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="TextControlPlaceholderForegroundPointerOver" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="TextControlPlaceholderForegroundFocused" ResourceKey="MidGrayBrush" />
+                    <Thickness x:Key="TextControlBorderThemeThickness">1</Thickness>
+                    <Thickness x:Key="TextControlBorderThemeThicknessFocused">1</Thickness>
+                    <x:Double x:Key="TextControlThemeMinHeight">36</x:Double>
+                    <Thickness x:Key="TextControlThemePadding">10,8,10,8</Thickness>
+                    <SolidColorBrush x:Key="TextControlSelectionHighlightColor" Color="{StaticResource HairlineColor}" />
+
+                    <StaticResource x:Key="ComboBoxBackground" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxBackgroundPointerOver" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxBackgroundPressed" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxBackgroundUnfocused" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxBackgroundBorderBrushFocused" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="ComboBoxBackgroundBorderBrushUnfocused" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxBorderBrush" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxBorderBrushPointerOver" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxBorderBrushPressed" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxForeground" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxForegroundFocused" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxForegroundFocusedPressed" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxPlaceHolderForeground" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="ComboBoxDropDownGlyphForeground" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="ComboBoxDropDownGlyphForegroundFocused" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="ComboBoxDropDownGlyphForegroundFocusedPressed" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="ComboBoxDropDownBackground" ResourceKey="PaperBrush" />
+                    <StaticResource x:Key="ComboBoxDropDownBorderBrush" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="ComboBoxItemBackgroundPointerOver" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxItemBackgroundPressed" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelected" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPointerOver" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPressed" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="ComboBoxItemForeground" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemForegroundPointerOver" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemForegroundPressed" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemForegroundSelected" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemForegroundSelectedPointerOver" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemForegroundSelectedPressed" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="ComboBoxItemBorderBrushSelected" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxItemBorderBrushSelectedPointerOver" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="ComboBoxItemBorderBrushPointerOver" ResourceKey="ClearBrush" />
+
+                    <StaticResource x:Key="MenuFlyoutPresenterBackground" ResourceKey="PaperBrush" />
+                    <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemBackground" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemForeground" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemForegroundPointerOver" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemForegroundPressed" ResourceKey="InkBrush" />
+                    <StaticResource x:Key="MenuFlyoutItemKeyboardAcceleratorTextForeground" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="MenuFlyoutSubItemChevron" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="MenuFlyoutSubItemChevronPointerOver" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="MenuFlyoutSubItemChevronPressed" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="MenuFlyoutSubItemChevronSubMenuOpened" ResourceKey="MidGrayBrush" />
+
+                    <StaticResource x:Key="DataGridColumnHeaderBackgroundBrush" ResourceKey="SidebarBrush" />
+                    <StaticResource x:Key="DataGridColumnHeaderForegroundBrush" ResourceKey="MidGrayBrush" />
+                    <StaticResource x:Key="DataGridColumnHeaderHoveredBackgroundBrush" ResourceKey="SidebarBrush" />
+                    <StaticResource x:Key="DataGridColumnHeaderPressedBackgroundBrush" ResourceKey="SidebarBrush" />
+                    <StaticResource x:Key="DataGridColumnHeaderDraggedBackgroundBrush" ResourceKey="SidebarBrush" />
+                    <StaticResource x:Key="DataGridGridLinesBrush" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="DataGridFillerColumnGridLinesBrush" ResourceKey="HairlineBrush" />
+                    <StaticResource x:Key="DataGridRowBackgroundBrush" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="DataGridCellBackgroundBrush" ResourceKey="ClearBrush" />
+                    <Color x:Key="DataGridRowHoveredBackgroundColor">#0a000000</Color>
+                    <StaticResource x:Key="DataGridRowSelectedBackgroundBrush" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="DataGridRowSelectedHoveredBackgroundBrush" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="DataGridRowSelectedUnfocusedBackgroundBrush" ResourceKey="CanvasBrush" />
+                    <StaticResource x:Key="DataGridRowSelectedHoveredUnfocusedBackgroundBrush" ResourceKey="CanvasBrush" />
+                    <x:Double x:Key="DataGridRowSelectedBackgroundOpacity">1</x:Double>
+                    <x:Double x:Key="DataGridRowSelectedHoveredBackgroundOpacity">1</x:Double>
+                    <x:Double x:Key="DataGridRowSelectedUnfocusedBackgroundOpacity">1</x:Double>
+                    <x:Double x:Key="DataGridRowSelectedHoveredUnfocusedBackgroundOpacity">1</x:Double>
+                    <StaticResource x:Key="DataGridCellFocusVisualPrimaryBrush" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="DataGridCellFocusVisualSecondaryBrush" ResourceKey="ClearBrush" />
+                    <StaticResource x:Key="DataGridCurrencyVisualPrimaryBrush" ResourceKey="ClearBrush" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <Application.Styles>
+        <FluentTheme />
+
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+
+        <Style Selector="Window">
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+            <Setter Property="FontFamily" Value="{DynamicResource FontSans}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+            <Setter Property="FontWeight" Value="Normal" />
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="Foreground" Value="{DynamicResource MidGrayBrush}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextCaption}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.muted">
+            <Setter Property="Foreground" Value="{DynamicResource MidGrayBrush}" />
+        </Style>
+        <Style Selector="TextBlock.caption">
+            <Setter Property="Foreground" Value="{DynamicResource MidGrayBrush}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextCaption}" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="LetterSpacing" Value="0.6" />
+        </Style>
+        <Style Selector="TextBlock.label">
+            <Setter Property="FontWeight" Value="Medium" />
+        </Style>
+        <Style Selector="TextBlock.heading">
+            <Setter Property="FontSize" Value="{DynamicResource TextSubheading}" />
+            <Setter Property="FontWeight" Value="Medium" />
+        </Style>
+
+        <Style Selector="TextBlock.error">
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+
+        <Style Selector="Border.card">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusCards}" />
+            <Setter Property="Background" Value="{DynamicResource PaperBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="BoxShadow" Value="{DynamicResource ShadowCard}" />
+            <Setter Property="Padding" Value="20" />
+        </Style>
+        <Style Selector="Border.sidebar">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusCards}" />
+            <Setter Property="Background" Value="{DynamicResource SidebarBrush}" />
+            <Setter Property="Padding" Value="20" />
+        </Style>
+        <Style Selector="Border.badge">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="Padding" Value="8,2" />
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+        </Style>
+
+        <Style Selector="Button">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="MinHeight" Value="{DynamicResource SizeControl}" />
+            <Setter Property="Padding" Value="16,0" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+
+            <Setter Property="Background" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+        </Style>
+
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource InkBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource SidebarBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource InkSoftBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource SidebarBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource InkSoftBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource SidebarBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="Button.secondary">
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.secondary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.secondary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="Button.destructive">
+            <Setter Property="Background" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.destructive:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.destructive:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="TextBox">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="MinHeight" Value="{DynamicResource SizeControl}" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="MinHeight" Value="{DynamicResource SizeControl}" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="ComboBoxItem">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+        </Style>
+
+        <Style Selector="Menu">
+            <Setter Property="Background" Value="{DynamicResource ClearBrush}" />
+        </Style>
+        <Style Selector="MenuItem">
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+        </Style>
+        <Style Selector="MenuItem.destructive">
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+        </Style>
+        <Style Selector="MenuItem.destructive:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource EmberBrush}" />
+        </Style>
+
+        <Style Selector="ListBox">
+            <Setter Property="Background" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+        <Style Selector="ListBoxItem">
+            <Setter Property="CornerRadius" Value="{DynamicResource RadiusButtons}" />
+            <Setter Property="MinHeight" Value="{DynamicResource SizeControl}" />
+            <Setter Property="Padding" Value="12,4" />
+            <Setter Property="Margin" Value="0,0,0,4" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+        </Style>
+
+        <Style Selector="ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PaperBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+        </Style>
+
+        <Style Selector="DataGrid">
+            <Setter Property="Background" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="RowBackground" Value="{DynamicResource ClearBrush}" />
+            <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource HairlineBrush}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextBody}" />
+        </Style>
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SidebarBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource MidGrayBrush}" />
+            <Setter Property="FontSize" Value="{DynamicResource TextCaption}" />
+            <Setter Property="FontWeight" Value="Medium" />
+        </Style>
+        <Style Selector="DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
+            <Setter Property="Fill" Value="{DynamicResource CanvasBrush}" />
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="DataGridCell">
+            <Setter Property="Foreground" Value="{DynamicResource InkBrush}" />
+        </Style>
+    </Application.Styles>
+</Application>
